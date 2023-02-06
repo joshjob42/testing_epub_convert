@@ -180,7 +180,7 @@ var dotEPUB = {
                 }
             }
             var l = document.createElement("form");
-            return e.content
+            return e.content;
 //             l.setAttribute("action", dotEPUB.path), l.setAttribute("method", "post"), l.setAttribute("accept-charset", "utf-8"), dotEPUB.field(l, "format", dotEPUB.format), dotEPUB.field(l, "title", e.title), dotEPUB.field(l, "html", e.content), dotEPUB.field(l, "url", "Link" !== dotEPUB.type ? window.location.href : dotEPUB_url), dotEPUB.field(l, "author", t), dotEPUB.field(l, "copy", o), dotEPUB.field(l, "flags", dotEPUB.flags), dotEPUB.field(l, "links", dotEPUB.links), dotEPUB.field(l, "lang", dotEPUB_lang), dotEPUB.field(l, "imgs", dotEPUB.imgs), dotEPUB.field(l, "wlang", dotEPUB.wlang), dotEPUB.field(l, "v", dotEPUB.version + " / " + dotEPUB.type.substring(0, 1).toLowerCase() + dotEPUB_bookver + " " + (1 === dotEPUB.imgs ? "I" : "") + (1 === dotEPUB.links ? "L" : "")), dotEPUB.field(l, "s", dotEPUB.s([5, 3, 100, 2, 0, 4, 33, 1, 255, document])), window.setTimeout(function() {
 //                 if (dotEPUB.removeStatus(), "Link" === dotEPUB.type) {
 //                     var e = document.body;
@@ -188,7 +188,6 @@ var dotEPUB = {
 //                 }
 //             }, 3e3), document.body.appendChild(l), l.submit(), l.parentNode.removeChild(l)
         },
-
         escapePre: function() {
             var e = dotEPUB.doc.getElementsByTagName("pre");
             e.length > 0 && (dotEPUB.addFlag("pre"), dbg("dotEPUB: pre found"));
