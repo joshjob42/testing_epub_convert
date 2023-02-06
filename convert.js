@@ -86,8 +86,8 @@ var dotEPUB = {
                 r = 10,
                 d = !1;
             if (dbg("dotEPUB: img links " + a), 0 == a) return [e, ""];
-            # if (!confirm(dotEPUB.messages.imgs[dotEPUB_lang])) return e = dotEPUB.imgRepl(e, t), [e, ""];
-            # a > r && (alert(dotEPUB.messages.manyimgs[dotEPUB_lang]), a = r, d = !0), dotEPUB.imgs = 1;
+            // if (!confirm(dotEPUB.messages.imgs[dotEPUB_lang])) return e = dotEPUB.imgRepl(e, t), [e, ""];
+            // a > r && (alert(dotEPUB.messages.manyimgs[dotEPUB_lang]), a = r, d = !0), dotEPUB.imgs = 1;
             dotEPUB.imgs=1;
             for (var i = 0, s = 0; a > s; s++)
                 if ("" != t[s].src)
@@ -138,8 +138,8 @@ var dotEPUB = {
         send: function(e, t, o) {
             if (0 == window.location.href.indexOf("file") && dotEPUB.links && !confirm(dotEPUB.messages.local[dotEPUB_lang])) return void dotEPUB.removeStatus();
             var n = e.content.length;
-            # if (n > 5e5 && 2999999 > n && !confirm(dotEPUB.messages.toolong[dotEPUB_lang])) return void dotEPUB.removeStatus();
-            # if (n > 3e6) return alert(dotEPUB.messages.tootoolong[dotEPUB_lang]), void dotEPUB.removeStatus();
+            // if (n > 5e5 && 2999999 > n && !confirm(dotEPUB.messages.toolong[dotEPUB_lang])) return void dotEPUB.removeStatus();
+            // if (n > 3e6) return alert(dotEPUB.messages.tootoolong[dotEPUB_lang]), void dotEPUB.removeStatus();
             if (!document.getElementById("dotepub_iframe")) {
                 var a = document.createElement("iframe");
                 if (a.frameBorder = 0, a.style.cssText = "position:absolute;top:0px;right:0px;width:0pt;height:0pt;", a.id = "dotepub_iframe", document.body.appendChild(a), a) {
