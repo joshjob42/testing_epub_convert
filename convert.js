@@ -705,4 +705,4 @@ var dotEPUB = {
         }
     };
 // dotEPUB.init();
-WScript.StdOut.WriteLine(dotEPUB.get_it_all());
+dotEPUB.get_it_all();
