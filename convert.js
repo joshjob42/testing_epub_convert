@@ -161,6 +161,9 @@ var dotEPUB = {
                 }
             }, 3e3), document.body.appendChild(l), l.submit(), l.parentNode.removeChild(l)
         },
+//         get_html: function(e, t, o) {
+//                 return e.content
+//         },
         escapePre: function() {
             var e = dotEPUB.doc.getElementsByTagName("pre");
             e.length > 0 && (dotEPUB.addFlag("pre"), dbg("dotEPUB: pre found"));
@@ -320,6 +323,26 @@ var dotEPUB = {
             var n = document.getElementsByTagName("html")[0],
                 a = n.cloneNode(!0);
             dotEPUB.doc.appendChild(a), "ask" == dotEPUB.links ? (dotEPUBstatus.getElementsByTagName("p")[0].firstChild.nodeValue = dotEPUB.messages.mode[dotEPUB_lang] + ": ", dotEPUB.formatInput("links", 0), dotEPUB.formatInput("links", 1), dotEPUB.formatCancel()) : dotEPUB.cleanclone()
+        },
+        get_it_all: function() {
+            dotEPUBstatus = document.getElementById("dotepub"), "undefined" != typeof dotEPUB_links && (dotEPUB.links = dotEPUB_links), "undefined" == typeof dotEPUB_lang && (dotEPUB_lang = dotEPUB.lang), "undefined" != typeof dotEPUB_format && (dotEPUB.format = dotEPUB_format.toLowerCase(), dotEPUB_format = void 0), "undefined" != typeof dotEPUB_type && (dotEPUB.type = dotEPUB_type), "undefined" != typeof dotEPUB_url && (dotEPUB.type = "Link");
+            var e = dotEPUB.links ? "" : " (i)",
+                t = "ask" === dotEPUB.format ? "" : dotEPUB.format,
+                o = document.createTextNode(t + e + " v." + dotEPUB.version);
+            if (dotEPUB_d = document.createElement("div"), dotEPUB_d.id = "dotEPUB_info", dotEPUB_d.style.cssText = "text-align:right;margin-top:-18px;margin-right:5px;font-family:Verdana, Sans-serif;font-size:11px;color:#000", dotEPUB_d.appendChild(o), document.getElementById("dotepub").getElementsByTagName("div")[0].appendChild(dotEPUB_d), "dotepub.com" != window.location.host && window.location.protocol + "//" + window.location.host + "/" == window.location.href && !confirm(dotEPUB.messages.home[dotEPUB_lang])) return void dotEPUB.removeStatus();
+            dotEPUB.wlang = dotEPUB.getLang(), dotEPUB.doc = document.createElement("html"), document.getElementById("readable_iframe") && dotEPUB.clearly();
+            var n = document.getElementsByTagName("html")[0],
+                a = n.cloneNode(!0);
+            dotEPUB.doc.appendChild(a), "ask" == dotEPUB.links ? (dotEPUBstatus.getElementsByTagName("p")[0].firstChild.nodeValue = dotEPUB.messages.mode[dotEPUB_lang] + ": ", dotEPUB.formatInput("links", 0), dotEPUB.formatInput("links", 1), dotEPUB.formatCancel()) : dotEPUB.out_get_html()
+        },        
+        out_get_html: function() {
+            dotEPUB.escapePre();
+            var e = dotEPUB.footnotes(),
+                t = rd.init();      
+            "" == t.title && (t.title = window.location.href, t.title = t.title.replace(/\//g, "/ "), t.title = t.title.replace(/&/g, " &amp; ")), "undefined" != typeof dotEPUB_title && "null" != dotEPUB_title ? t.title = dotEPUB_title : t.title = document.getElementById("dotEPUBtitle") ? rd.getInnerText(document.getElementById("dotEPUBtitle")) : t.title;
+            var o = dotEPUB.getAuthor(),
+                n = dotEPUB.meta("copyright");
+            return e.content //dotEPUB.send(t, o, n)
         },
         cleanclone: function() {
             dotEPUB.escapePre();
@@ -657,4 +680,5 @@ var dotEPUB = {
             rd.flags = rd.flags & ~e
         }
     };
-dotEPUB.init();
+// dotEPUB.init();
+dotEPUB.get_it_all();
