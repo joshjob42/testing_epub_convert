@@ -339,9 +339,9 @@ var dotEPUB = {
             dotEPUB.escapePre();
             var e = dotEPUB.footnotes(),
                 t = rd.init();      
-            "" == t.title && (t.title = window.location.href, t.title = t.title.replace(/\//g, "/ "), t.title = t.title.replace(/&/g, " &amp; ")), "undefined" != typeof dotEPUB_title && "null" != dotEPUB_title ? t.title = dotEPUB_title : t.title = document.getElementById("dotEPUBtitle") ? rd.getInnerText(document.getElementById("dotEPUBtitle")) : t.title;
-            var o = dotEPUB.getAuthor(),
-                n = dotEPUB.meta("copyright");
+//             "" == t.title && (t.title = window.location.href, t.title = t.title.replace(/\//g, "/ "), t.title = t.title.replace(/&/g, " &amp; ")), "undefined" != typeof dotEPUB_title && "null" != dotEPUB_title ? t.title = dotEPUB_title : t.title = document.getElementById("dotEPUBtitle") ? rd.getInnerText(document.getElementById("dotEPUBtitle")) : t.title;
+//             var o = dotEPUB.getAuthor(),
+//                 n = dotEPUB.meta("copyright");
             return e.content //dotEPUB.send(t, o, n)
         },
         cleanclone: function() {
