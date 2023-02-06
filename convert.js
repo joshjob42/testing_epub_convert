@@ -357,7 +357,7 @@ var dotEPUB = {
             dotEPUB.wlang = dotEPUB.getLang(), dotEPUB.doc = document.createElement("html"), document.getElementById("readable_iframe") && dotEPUB.clearly();
             var n = document.getElementsByTagName("html")[0],
                 a = n.cloneNode(!0);
-            dotEPUB.doc.appendChild(a), "ask" == dotEPUB.links ? (dotEPUBstatus.getElementsByTagName("p")[0].firstChild.nodeValue = dotEPUB.messages.mode[dotEPUB_lang] + ": ", dotEPUB.formatInput("links", 0), dotEPUB.formatInput("links", 1), dotEPUB.formatCancel()) : dotEPUB.get_out_html()
+            dotEPUB.doc.appendChild(a), "ask" == dotEPUB.links ? (dotEPUBstatus.getElementsByTagName("p")[0].firstChild.nodeValue = dotEPUB.messages.mode[dotEPUB_lang] + ": ", dotEPUB.formatInput("links", 0), dotEPUB.formatInput("links", 1), dotEPUB.formatCancel()) : dotEPUB.out_get_html()
         },        
         out_get_html: function() {
             dotEPUB.escapePre();
