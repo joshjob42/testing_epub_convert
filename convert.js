@@ -88,6 +88,7 @@ var dotEPUB = {
             if (dbg("dotEPUB: img links " + a), 0 == a) return [e, ""];
             # if (!confirm(dotEPUB.messages.imgs[dotEPUB_lang])) return e = dotEPUB.imgRepl(e, t), [e, ""];
             # a > r && (alert(dotEPUB.messages.manyimgs[dotEPUB_lang]), a = r, d = !0), dotEPUB.imgs = 1;
+            dotEPUB.imgs=1;
             for (var i = 0, s = 0; a > s; s++)
                 if ("" != t[s].src)
                     if (t[s].src.match(/^data:/)) n = n.replace(/<img /, "<imagedata ");
